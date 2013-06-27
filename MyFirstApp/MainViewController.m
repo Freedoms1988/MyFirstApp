@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad
 {
-    _tableDataArray = [[NSMutableArray arrayWithObjects:@"UI控件",@"Tabbar",@"Picker",@"Tiger",@"Sqlite",@"CoreGraphics",@"GsetureRecognizer",@"Demo",@"CoreAnimation",@"AFNetWorking",nil] retain];
+    _tableDataArray = [[NSMutableArray arrayWithObjects:@"UI控件",@"Tabbar",@"Picker",@"Tiger",@"Sqlite",@"CoreGraphics",@"GsetureRecognizer",@"Demo",@"CoreAnimation",@"AFNetWorking天气预报",nil] retain];
     _rightItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStyleBordered target:self action:@selector(loginAction)];
     self.navigationItem.rightBarButtonItem = _rightItem;
     
