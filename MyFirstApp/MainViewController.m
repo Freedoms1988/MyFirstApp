@@ -28,6 +28,7 @@
     UITableView *tableView =  [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds] style:UITableViewStyleGrouped];
 	
 	tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
 	tableView.frame = self.view.bounds;
     [self.view addSubview:tableView];
     tableView.dataSource = self;
