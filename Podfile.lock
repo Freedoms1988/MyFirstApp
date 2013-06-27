@@ -1,0 +1,16 @@
+PODS:
+  - AFNetworking (1.3.1)
+  - JSONKit (1.5pre)
+  - MBProgressHUD (0.7)
+
+DEPENDENCIES:
+  - AFNetworking
+  - JSONKit
+  - MBProgressHUD
+
+SPEC CHECKSUMS:
+  AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
+
+COCOAPODS: 0.20.2
