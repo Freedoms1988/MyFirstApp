@@ -73,6 +73,8 @@
 	//准备数据
 	_width=rect.size.width;
 	_height=rect.size.height;
+    NSLog(@"%f",_width);
+    NSLog(@"%f",_height);
 	CGFloat radius=10.0f;
 	_context=UIGraphicsGetCurrentContext();
 	_dayArraySize=[_dayArray count];//数据总数

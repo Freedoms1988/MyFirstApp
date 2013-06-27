@@ -142,19 +142,15 @@
 }
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-	NSString *str;
 	switch (component) {
 		case kONECOMPONENT:
-			str = [_oneArray objectAtIndex:row%10];
-			break;
+			return [_oneArray objectAtIndex:row%10];
 		case kTWOCOMPONENT:
-			str = [_twoArray objectAtIndex:row%10];
-			break;
+			return [_twoArray objectAtIndex:row%10];
 		case kTHREECOMPONENT:
-			str = [_threeArray objectAtIndex:row%10];
-			break;
+			return [_threeArray objectAtIndex:row%10];
 	}
-	return str;
+    return 0;
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {

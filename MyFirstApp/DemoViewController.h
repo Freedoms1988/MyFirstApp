@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ChartView.h"
+#import "BoardView.h"
 @interface DemoViewController : UIViewController<UIGestureRecognizerDelegate>
 
 @end

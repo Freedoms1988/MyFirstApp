@@ -12,6 +12,19 @@
 #import "TabbarViewController.h"
 #import "UserInfo.h"
 #import "RegisterViewController.h"
+#import "UIController.h"
+#import "TabbarViewController.h"
+#import "UserInfo.h"
+#import "BlueViewController.h"
+#import "YellowViewController.h"
+#import "PickerViewController.h"
+#import "TigerViewController.h"
+#import "SqliteViewController.h"
+#import "CoreGraphicsViewController.h"
+#import "GestureRecognizerViewController.h"
+#import "DemoViewController.h"
+#import "CoreAnimationController.h"
+#import "AFNetWorkingViewController.h"
 
 @interface MainViewController : UIViewController<LoginViewDelegate,UITableViewDataSource,UITableViewDelegate,RegisterViewDelegate>
 @property(strong,nonatomic)UserInfo *userInfo;

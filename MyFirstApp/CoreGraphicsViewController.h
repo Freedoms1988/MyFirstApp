@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyView.h"
 
 @interface CoreGraphicsViewController : UIViewController
 

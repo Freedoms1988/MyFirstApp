@@ -7,17 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "UIController.h"
-#import "TabbarViewController.h"
-#import "UserInfo.h"
-#import "BlueViewController.h"
-#import "YellowViewController.h"
-#import "PickerViewController.h"
-#import "TigerViewController.h"
-#import "SqliteViewController.h"
-#import "CoreGraphicsViewController.h"
-#import "GestureRecognizerViewController.h"
-#import "DemoViewController.h"
+
 @interface MainViewController()
 {
     NSArray *_tableDataArray;
@@ -31,11 +21,11 @@
 
 - (void)viewDidLoad
 {
-    _tableDataArray = [[NSMutableArray arrayWithObjects:@"UI控件",@"Tabbar",@"Picker",@"Tiger",@"Sqlite",@"CoreGraphics",@"GsetureRecognizer",@"Demo",nil]retain];
-    _rightItem = [[UIBarButtonItem alloc]initWithTitle:@"UnLogin" style:UIBarButtonItemStyleBordered target:self action:@selector(loginAction)];
+    _tableDataArray = [[NSMutableArray arrayWithObjects:@"UI控件",@"Tabbar",@"Picker",@"Tiger",@"Sqlite",@"CoreGraphics",@"GsetureRecognizer",@"Demo",@"CoreAnimation",@"AFNetWorking",nil] retain];
+    _rightItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStyleBordered target:self action:@selector(loginAction)];
     self.navigationItem.rightBarButtonItem = _rightItem;
     
-    UITableView *tableView =  [[UITableView alloc] initWithFrame:[[UIScreen mainScreen]bounds] style:UITableViewStyleGrouped];
+    UITableView *tableView =  [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds] style:UITableViewStyleGrouped];
 	
 	tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	tableView.frame = self.view.bounds;
@@ -73,7 +63,7 @@
 		[self.navigationController pushViewController:loginViewController animated:YES];
 		Freedoms_Release(loginViewController);
 	}else{
-		_rightItem.title = @"UnLogin";
+		_rightItem.title = @"登录";
 		_userInfo.usernameString=nil;
 		_userInfo.passwordString=nil;
 	}
@@ -154,7 +144,20 @@
 				DemoViewController *demoViewController=[[DemoViewController alloc] init];
 				[self.navigationController pushViewController:demoViewController animated:YES];
 				Freedoms_Release(demoViewController);
+                break;
 			}
+            case 8:{
+                CoreAnimationController *coreAnimationController=[[CoreAnimationController alloc] init];
+                [self.navigationController pushViewController:coreAnimationController animated:YES];
+                Freedoms_Release(coreAnimationController);
+                break;
+            }
+            case 9:{
+                AFNetWorkingViewController *afnetworkingViewController = [[AFNetWorkingViewController alloc] init];
+                [self.navigationController pushViewController:afnetworkingViewController animated:YES];
+                Freedoms_Release(afnetworkingViewController);
+                break;
+            }
 		}
 	}
 }
@@ -170,7 +173,7 @@
 {
 	_userInfo.usernameString=username;
 	_userInfo.passwordString=password;
-    _rightItem.title = _userInfo.usernameString;
+    _rightItem.title =[_userInfo.usernameString stringByAppendingString:@",您好"];
 }
 
 -(void)registUsername:(NSString *)usernameString registPassword:(NSString *)passwordString

@@ -20,7 +20,7 @@
 @interface DemoViewController ()
 {
 	//图表
-//	ChartView *_chartView;
+	ChartView *_chartView;
 	//图表结束
 	//棋盘
 //	BoardView *_boardView;
@@ -39,11 +39,11 @@
 	self.navigationItem.rightBarButtonItem=buttonItem;
 	Freedoms_Release(buttonItem);
 	//图表
-//	_chartView=[[ChartView alloc]initWithFrame:kDEMOVIEW_RECT_PORTAIT];
-//	_chartView.backgroundColor=[UIColor clearColor];
-//	_chartView.dayArray=[NSArray arrayWithObjects:@"220",@"200",@"220",@"290",@"330",@"220",@"220",@"200",@"220",@"290",@"330",@"220",@"290",@"270",@"220",@"220",@"70",@"240",@"240",@"270",@"220",@"270",@"280",@"290",@"270",@"220",@"190",@"70",@"120",nil];
-//	_chartView.title=@"MOKO";
-//	[self.view addSubview:_chartView];
+	_chartView=[[ChartView alloc]initWithFrame:kDEMOVIEW_RECT_PORTAIT];
+	_chartView.backgroundColor=[UIColor clearColor];
+	_chartView.dayArray=[NSArray arrayWithObjects:@"220",@"200",@"220",@"290",@"330",@"220",@"220",@"200",@"220",@"290",@"330",@"220",@"290",@"270",@"220",@"220",@"70",@"240",@"240",@"270",@"220",@"270",@"280",@"290",@"270",@"220",@"190",@"70",@"120",nil];
+	_chartView.title=@"MOKO";
+	[self.view addSubview:_chartView];
 	//图表结束
 	//棋盘
 //	_boardView = [[BoardView alloc] initWithFrame:kBoardView_RECT];
@@ -62,7 +62,7 @@
 -(void)dealloc
 {
 	//图表
-//	Freedoms_Release(_chartView);
+	Freedoms_Release(_chartView);
 	//图表结束
 	//棋盘
 //	Freedoms_Release(_boardView);
@@ -76,13 +76,13 @@
 	[self.navigationController popToRootViewControllerAnimated:YES];
 }
 //图表
-//-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-//{
-//	if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
-//		_chartView.frame=kDEMOVIEW_RECT_PORTAIT;
-//	}else{
-//		_chartView.frame=kDEMOVIEW_RECT_LANDSCAPE;
-//	}
-//}
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+	if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
+		_chartView.frame=kDEMOVIEW_RECT_PORTAIT;
+	}else{
+		_chartView.frame=kDEMOVIEW_RECT_LANDSCAPE;
+	}
+}
 //图表结束
 @end

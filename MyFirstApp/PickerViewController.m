@@ -66,16 +66,7 @@
 //返回滚轮数据源数据条数
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	int i;
-	switch (component) {//判断左右两边滚轮
-		case kParentComponent://若左边滚轮，则返回左边滚轮数据源条数
-			i=[_twoParentArray count];
-			break;
-		case kChildComponent://若右边滚轮，则返回右边滚轮数据源条数
-			i=[_twoChildArray count];
-			break;
-	}
-	return i;
+	return component ==kParentComponent ? [_twoParentArray count] : [_twoChildArray count];
 }
 //返回选择器有多少个滚轮
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -112,15 +103,6 @@
 //每列每行的具体内容
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-	NSString *str;
-	switch (component) {
-		case kParentComponent:
-			str=[_twoParentArray objectAtIndex:row];
-			break;
-		case kChildComponent:
-			str=[_twoChildArray objectAtIndex:row];
-			break;
-	}
-	return str;
+	return component == kParentComponent ? [_twoParentArray objectAtIndex:row] : [_twoChildArray objectAtIndex:row];
 }
 @end

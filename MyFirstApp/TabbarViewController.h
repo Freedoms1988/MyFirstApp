@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TabbarViewController.h"
+#import "BlueViewController.h"
+#import "YellowViewController.h"
 @interface TabbarViewController : UIViewController<UITabBarControllerDelegate>
 
 @end
