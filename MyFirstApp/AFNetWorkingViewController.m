@@ -259,13 +259,13 @@
         for (NSString *weatherInfoKey in _weatherInfoKeys) {
             [_weatherArray addObject:[weatherInfo objectForKey:weatherInfoKey]];
         }
-            [_tableView reloadData];
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSLog(@"FAIL");
-        }];
-        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]]; // -1016
-        [jsonRequest start];
+        [_tableView reloadData];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        NSLog(@"FAIL");
+    }];
+    [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]]; // -1016
+    [jsonRequest start];
 }
 
 -(void) nowAction
@@ -275,13 +275,14 @@
     NSString *cityCode = [_citysDict objectForKey:[_cityTextfield text]];
     if (cityCode) {
         url = [NSURL URLWithString:[[NOW stringByAppendingString:cityCode]stringByAppendingString:@".html"]];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        [self sendRequest:request];
+        Freedoms_Release(request);
     }else{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"请输入正确的地区名称" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
-        return;
+        Freedoms_Release(alertView);
     }
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [self sendRequest:request];
 }
 
 -(void) sevenAction
@@ -291,13 +292,14 @@
     NSString *cityCode = [_citysDict objectForKey:[_cityTextfield text]];
     if (cityCode) {
         url = [NSURL URLWithString:[[SEVEN stringByAppendingString:cityCode]stringByAppendingString:@".html"]];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        [self sendRequest:request];
+        Freedoms_Release(request);
     }else{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"请输入正确的地区名称" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
-        return;
+        Freedoms_Release(alertView);
     }
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [self sendRequest:request];
 }
 
 -(void) todayAction
@@ -307,13 +309,14 @@
     NSString *cityCode = [_citysDict objectForKey:[_cityTextfield text]];
     if (cityCode) {
         url = [NSURL URLWithString:[[TODAY stringByAppendingString:cityCode]stringByAppendingString:@".html"]];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        [self sendRequest:request];
+        Freedoms_Release(request);
     }else{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"请输入正确的地区名称" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
-        return;
+        Freedoms_Release(alertView);
     }
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [self sendRequest:request];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
