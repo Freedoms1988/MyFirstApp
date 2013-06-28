@@ -159,7 +159,7 @@
                 Freedoms_Release(afnetworkingViewController);
                 break;
             }
-		}
+        }
 	}
 }
 //显示滑动删除按钮
