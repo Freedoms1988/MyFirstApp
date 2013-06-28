@@ -34,6 +34,7 @@
 		8A7F7A8916F8622D0044B1B6 /* array.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A7F7A8816F8622D0044B1B6 /* array.plist */; };
 		8A87B328170C00CC000C1B61 /* BoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A87B327170C00CC000C1B61 /* BoardView.m */; };
 		8A9C1D2B16F6B68300AC8F8A /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C1D2A16F6B68300AC8F8A /* MyNavigationController.m */; };
+		8AD4119C177D345300EAEE3E /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4119B177D345300EAEE3E /* WeatherViewController.m */; };
 		8AEDE35116E75E1200323EB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEDE35016E75E1200323EB6 /* UIKit.framework */; };
 		8AEDE35316E75E1200323EB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEDE35216E75E1200323EB6 /* Foundation.framework */; };
 		8AEDE35516E75E1200323EB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEDE35416E75E1200323EB6 /* CoreGraphics.framework */; };
@@ -99,6 +100,8 @@
 		8A87B327170C00CC000C1B61 /* BoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardView.m; sourceTree = "<group>"; };
 		8A9C1D2916F6B68300AC8F8A /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
 		8A9C1D2A16F6B68300AC8F8A /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+		8AD4119A177D345300EAEE3E /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		8AD4119B177D345300EAEE3E /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		8AEDE34D16E75E1200323EB6 /* MyFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEDE35016E75E1200323EB6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8AEDE35216E75E1200323EB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -276,6 +279,15 @@
 			name = AFNetWorking;
 			sourceTree = "<group>";
 		};
+		8AD41199177D338600EAEE3E /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				8AD4119A177D345300EAEE3E /* WeatherViewController.h */,
+				8AD4119B177D345300EAEE3E /* WeatherViewController.m */,
+			);
+			name = weather;
+			sourceTree = "<group>";
+		};
 		8AEDE34416E75E1200323EB6 = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +365,7 @@
 		8AEDE37716E75E4500323EB6 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				8AD41199177D338600EAEE3E /* weather */,
 				8A653CF2177A819B00082028 /* AFNetWorking */,
 				8A653CF1177A817700082028 /* chart */,
 				8A653CEF177A80D900082028 /* coregraphics */,
@@ -513,6 +526,7 @@
 				8A7D550B173A38DC00046ED0 /* CoreAnimationController.m in Sources */,
 				8A7D5511173A3ACE00046ED0 /* CAView.m in Sources */,
 				8A653CF5177A81E000082028 /* AFNetWorkingViewController.m in Sources */,
+				8AD4119C177D345300EAEE3E /* WeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
