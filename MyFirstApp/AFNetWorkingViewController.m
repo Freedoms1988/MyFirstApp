@@ -88,12 +88,7 @@
     [_weatherKeysDict setObject:@"星期" forKey:@"week"];
     [_weatherKeysDict setObject:@"fchh" forKey:@"fchh"];
     [_weatherKeysDict setObject:@"更新时间" forKey:@"ptime"];
-    
-    [_weatherKeysDict setObject:@"最高气温" forKey:@"temp1"];
-    [_weatherKeysDict setObject:@"最低气温" forKey:@"temp2"];
-    
-    //    [_weatherKeysDict setObject:@"未来1天摄氏温度" forKey:@"temp1"];
-    //    [_weatherKeysDict setObject:@"未来2天摄氏温度" forKey:@"temp2"];
+
     [_weatherKeysDict setObject:@"未来3天摄氏温度" forKey:@"temp3"];
     [_weatherKeysDict setObject:@"未来4天摄氏温度" forKey:@"temp4"];
     [_weatherKeysDict setObject:@"未来5天摄氏温度" forKey:@"temp5"];
@@ -288,6 +283,8 @@
 -(void) sevenAction
 {
     [_cityTextfield resignFirstResponder];
+    [_weatherKeysDict setObject:@"未来1天摄氏温度" forKey:@"temp1"];
+    [_weatherKeysDict setObject:@"未来2天摄氏温度" forKey:@"temp2"];
     NSURL *url = nil;
     NSString *cityCode = [_citysDict objectForKey:[_cityTextfield text]];
     if (cityCode) {
@@ -305,6 +302,8 @@
 -(void) todayAction
 {
     [_cityTextfield resignFirstResponder];
+    [_weatherKeysDict setObject:@"最高气温" forKey:@"temp1"];
+    [_weatherKeysDict setObject:@"最低气温" forKey:@"temp2"];
     NSURL *url = nil;
     NSString *cityCode = [_citysDict objectForKey:[_cityTextfield text]];
     if (cityCode) {
